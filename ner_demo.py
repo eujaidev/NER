@@ -22,10 +22,10 @@ if select == 'Paragraph':
         st.markdown(ent_html, unsafe_allow_html=True)
 
 elif select == "URL":
-    text = st.text_area("Enter url")
+    url = st.text_area("Enter url")
 
     if st.button("Analyze"):
-        article = Article(text)
+        article = Article(url)
         article.download()
         article.parse()
         doc=nlp(article.text)
